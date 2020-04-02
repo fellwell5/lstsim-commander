@@ -1,26 +1,161 @@
 rows:
     - row:
-        - col:
+        class:
+            - mt-5
+        col:
             -
-                type: label
-                text: Telefon
-            -
-                type: widget
-                id: anrufannehmen
-                colspan: 2
-                class:
-                    - btn-success
-        - col:
-            type: widget
-            id: aufkarteanzeigen
-            colspan: 1
-        - col:
-            type: widget
-            id: auflegen
-            colspan: 2
-            class:
-                - btn-danger
+                element:
+                    type: label
+                    text: Funk
     - row:
-        - col:
-            type: label
-            text: Test
+        col:
+            - 
+                element:
+                    type: widget
+                    id: sprechaufforderung
+                    colspan: 2
+                    class:
+                        - btn-success
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: verstanden
+                    colspan: 
+                    class:
+                        - btn-light
+                        - btn-lg
+            -
+                element:
+                    type: widget
+                    id: kommen
+                    colspan: 2
+                    class:
+                        - btn-success
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: verstandeneinsatzfenster
+                    colspan: 
+                    class:
+                        - btn-light
+                        - btn-lg
+    - row:
+        class:
+            - mt-5
+        col:
+            -
+                element:
+                    type: label
+                    text: Fahrzeuge
+    - row:
+        col:
+            - 
+                element:
+                    type: widget
+                    id: nef
+                    colspan: 2
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: rtw
+                    colspan: 2
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: ktw
+                    colspan: 2
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: polizei
+                    colspan: 2
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: feuerwehr
+                    colspan: 2
+                    class:
+                        - btn-light
+                        - btn-lg
+    - row:
+        class:
+            - mt-5
+        col:
+            -
+                element:
+                    type: label
+                    text: Alarmierung
+    - row:
+        col:
+            - 
+                element:
+                    type: widget
+                    id: alarmieren
+                    colspan: 2
+                    class:
+                        - btn-danger
+                        - btn-lg
+            -
+                element:
+                    type: widget
+                    id: signalfahrt
+                    colspan: 2
+                    class:
+                        - btn-primary
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: aaobest
+                    colspan: 
+                    class:
+                        - btn-light
+                        - btn-lg
+    - row:
+        class:
+            - mt-5
+        col:
+            -
+                element:
+                    type: label
+                    text: Telefon
+    - row:
+        col:
+            -
+                element:
+                    type: widget
+                    id: anrufannehmen
+                    colspan: 2
+                    class:
+                        - btn-success
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: aufkarteanzeigen
+                    colspan: 1
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
+                    id: auflegen
+                    colspan: 2
+                    class:
+                        - btn-danger
+                        - btn-lg

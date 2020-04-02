@@ -1,25 +1,169 @@
+# Fahrzeuge
 rtw-melder:
+    type: btn
     name: RTW-melder
     description: Alarmiert die Signalschleife (RTW-Melder) des Fahrzeuges
     category: Fahrzeuge
     shortcut: a
 ktw-melder:
+    type: btn
     name: KTW-Melder
     description: Alarmiert die Lutschschleife (KTW-Melder) des Fahrzeugs
     category: Fahrzeuge
     shortcut:
         - shift
         - a
+
+# Telefon-Log
 anrufannehmen:
+    type: btn
     name: Anruf annehmen / Einsatz erstellen
     description: Telefonanruf entgegennehmen bzw. Neuen Einsatz erstellen
     category: Telefon-Log
     shortcut: t
 aufkarteanzeigen:
+    type: btn
     name: Auf Karte anzeigen
     description: Auf Karte anzeigen
     shortcut: z
 auflegen:
+    type: btn
     name: Auflegen
     description: Auflegen
     shortcut: l
+
+# Alarmierungs-Menü
+fzg:
+    type: btn
+    name: Fzg. auswählen
+    description: nächstgelegenes Fzg. dem Einsatz zuordnen
+    shortcut: e
+fzgentf:
+    type: btn
+    name: Fzg. entfernen
+    description: entfernteste dem Einsatz zugeordnetem Fzg. von dem Einsatz entfernen
+    shortcut:
+        - shift
+        - e
+nef:
+    type: btn
+    name: NEF
+    description: nächstliegendes NEF bzw. NAW/RTH dem Einsatz zuordnen
+    shortcut: "n"
+nefentf:
+    type: btn
+    name: NEF entfernen
+    description: entferntestes dem Einsatz zugeordnetem NEF/NAW/RTH von dem Einsatz entfernen
+    shortcut:
+        - shift
+        - "n"
+rtw:
+    type: btn
+    name: RTW
+    description: nächstgelegener RTW dem Einsatz zuordnen
+    shortcut: r
+rtwentf:
+    type: btn
+    name: RTW entfernen
+    description: entferntester dem Einsatz zugeordnetem RTW von dem Einsatz entfernen
+    shortcut:
+        - shift
+        - r
+ktw:
+    type: btn
+    name: KTW
+    description: nächstgelegener KTW dem Einsatz zuordnen
+    shortcut: k
+ktwentf:
+    type: btn
+    name: KTW entfernen
+    description: entferntester dem Einsatz zugeordnetem KTW von dem Einsatz entfernen
+    shortcut:
+        - shift
+        - k
+signalfahrt:
+    type: btn
+    name: SoSi
+    description: Signalfahrt
+    shortcut: s
+polizei:
+    type: btn
+    name: Polizei
+    description: Polizei verständigen
+    shortcut: p
+feuerwehr:
+    type: btn
+    name: Feuerwehr
+    description: Feuerwehr verständigen
+    shortcut: f
+aaobest:
+    type: btn
+    name: AAO
+    description: AAO-Vorschlag bestätigen
+    shortcut: o
+aaoabb:
+    type: btn
+    name: AAO abbrechen
+    description: AAO-Vorschlag abbrechen / ausblenden
+    shortcut: b
+alarmieren:
+    type: btn
+    name: Alarmieren
+    description: Alarmieren bzw. Einsatz vorplanen (wenn Abholzeit eingetragen worden ist)
+    shortcut: a
+
+# Funk-Log
+kommen:
+    type: btn
+    name: Kommen Sie
+    description: Kommen bzw. Sprechwunsch beantworten
+    shortcut: k
+sprechaufforderung:
+    type: btn
+    name: Sprechen Sie
+    description: Sprechaufforderung bzw. Status 5 beantworten
+    shortcut: j
+verstanden:
+    type: btn
+    name: Verstanden
+    description: Verstanden
+    shortcut: v
+verstandeneinsatzfenster:
+    type: btn
+    name: Verstanden Einsatzfenster
+    description: Verstanden, Einsatzfenster wird geöffnet
+    shortcut:
+        - shift
+        - v
+verstandenwache:
+    type: btn
+    name: Verstanden zur Wache
+    description: Verstanden zur Wache
+    shortcut: w
+neuereinsatz:
+    type: btn
+    name: Neuer Einsatz
+    description: Neuer Einsatz
+    shortcut: "n"
+wiederholen:
+    type: btn
+    name: Wiederholen
+    description: Wiederholen
+    shortcut: o
+
+# Sonstiges
+spielzeit1:
+    type: btn
+    name: 1x
+    description: Setzt die Spielgeschwindigkeit auf 1x (Echtzeit)
+    shortcut: "y"
+spielzeit32:
+    type: btn
+    name: 32x
+    description: Setzt die Spielgeschwindigkeit auf 32x (höchste Stufe)
+    shortcut: x
+pause:
+    type: btn
+    name: Pause
+    description: Spiel pausieren
+    shortcut: p

@@ -1,0 +1,65 @@
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
+const createError = require('http-errors');
+const io = require('socket.io')(http);
+
+require('dotenv').config();
+const os = require("os");
+
+const accentsMap = {'ã': '@514 a','ẽ': '@514 e','ĩ': '@514 i','õ': '@514 o','ũ': '@514 u','Ã': '@514 A','Ẽ': '@514 E','Ĩ': '@514 I','Õ': '@514 O','Ũ': '@514 U','â': 'shift-@514 a','ê': 'shift-@514 e','î': 'shift-@514 i','ô': 'shift-@514 o','û': 'shift-@514 u','Â': 'shift-@514 A','Ê': 'shift-@514 E','Î': 'shift-@514 I','Ô': 'shift-@514 O','Û': 'shift-@514 U','à': 'shift-@192 a','è': 'shift-@192 e','ì': 'shift-@192 i','ò': 'shift-@192 o','ù': 'shift-@192 u','À': 'shift-@192 A','È': 'shift-@192 E','Ì': 'shift-@192 I','Ò': 'shift-@192 O','Ù': 'shift-@192 U','á': '@192 a','é': '@192 e','í': '@192 i','ó': '@192 o','ú': '@192 u','Á': '@192 A','É': '@192 E','Í': '@192 I','Ó': '@192 O','Ú': '@192 U','ç': '@192 c','Ç': '@192 C','ä': 'shift-@54 a','ë': 'shift-@54 e','ï': 'shift-@54 i','ö': 'shift-@54 o','ü': 'shift-@54 u','Ä': 'shift-@54 A','Ë': 'shift-@54 E','Ï': 'shift-@54 I','Ö': 'shift-@54 O','Ü': 'shift-@54 O'};
+const ks = require('node-key-sender');
+//ks.aggregateKeyboardLayout(accentsMap);
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/msg', function(req, res){
+    res.sendFile(__dirname + '/msg_test.html');
+});
+
+let connected_users = 0;
+
+app.get('/stats', function(req, res){
+    res.json({"connected_users": connected_users});
+});
+
+const configRouter = require('./routes/config');
+app.use('/config', configRouter);
+
+app.use(function(req, res, next) {
+    next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  
+  if(process.env.env == 'development' || os.hostname() == 'localhost'){
+    res.json({"error": true, "message": err.message, "status": err.status || 500, "environment": process.env.env, "stack": err.stack});
+  }else{
+    res.json({"error": true, "message": err.message, "status": err.status || 500});
+  }
+});
+
+io.on('connection', function(socket){
+    connected_users++;
+    console.log('a user connected');
+
+    socket.on('disconnect', function(){
+        connected_users--;
+        console.log('user disconnected');
+    });
+
+    socket.on('chat message', function(msg){
+        console.log('message: ' + msg);
+        ks.sendText(msg);
+    });
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});

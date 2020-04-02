@@ -1,0 +1,25 @@
+rtw-melder:
+    name: RTW-melder
+    description: Alarmiert die Signalschleife (RTW-Melder) des Fahrzeuges
+    category: Fahrzeuge
+    shortcut: a
+ktw-melder:
+    name: KTW-Melder
+    description: Alarmiert die Lutschschleife (KTW-Melder) des Fahrzeugs
+    category: Fahrzeuge
+    shortcut:
+        - shift
+        - a
+anrufannehmen:
+    name: Anruf annehmen / Einsatz erstellen
+    description: Telefonanruf entgegennehmen bzw. Neuen Einsatz erstellen
+    category: Telefon-Log
+    shortcut: t
+aufkarteanzeigen:
+    name: Auf Karte anzeigen
+    description: Auf Karte anzeigen
+    shortcut: z
+auflegen:
+    name: Auflegen
+    description: Auflegen
+    shortcut: l

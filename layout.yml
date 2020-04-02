@@ -1,0 +1,26 @@
+rows:
+    - row:
+        - col:
+            -
+                type: label
+                text: Telefon
+            -
+                type: widget
+                id: anrufannehmen
+                colspan: 2
+                class:
+                    - btn-success
+        - col:
+            type: widget
+            id: aufkarteanzeigen
+            colspan: 1
+        - col:
+            type: widget
+            id: auflegen
+            colspan: 2
+            class:
+                - btn-danger
+    - row:
+        - col:
+            type: label
+            text: Test

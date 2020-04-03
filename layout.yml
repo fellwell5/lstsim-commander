@@ -1,111 +1,135 @@
 rows:
     - row:
         class:
-            - mt-5
+            - mt-3
         col:
             -
                 element:
                     type: label
                     text: Funk
     - row:
+        height: 70px
         col:
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: sprechaufforderung
-                    colspan: 2
                     class:
                         - btn-success
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: verstanden
-                    colspan: 
                     class:
-                        - btn-light
+                        - btn-secondary
+                        - btn-lg
+            - 
+                colspan: 2
+                element:
+                    type: widget
+                    id: zurwache
+                    class:
+                        - btn-secondary
                         - btn-lg
             -
+                colspan: 2
                 element:
                     type: widget
                     id: kommen
-                    colspan: 2
                     class:
                         - btn-success
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: verstandeneinsatzfenster
-                    colspan: 
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
     - row:
         class:
-            - mt-5
+            - mt-3
         col:
             -
                 element:
                     type: label
                     text: Fahrzeuge
     - row:
+        height: 70px
         col:
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: nef
-                    colspan: 2
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: rtw
-                    colspan: 2
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: ktw
-                    colspan: 2
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: polizei
-                    colspan: 2
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
             - 
+                colspan: 2
                 element:
                     type: widget
                     id: feuerwehr
-                    colspan: 2
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
+            - 
+                colspan: 1
+                element:
+                    type: widget
+                    id: spielzeit32
+                    class:
+                        - btn-secondary
+            - 
+                colspan: 1
+                element:
+                    type: widget
+                    id: pause
+                    class:
+                        - btn-secondary
     - row:
         class:
-            - mt-5
+            - mt-3
         col:
             -
                 element:
                     type: label
-                    text: Alarmierung
+                    text: Alarmierung / Telefon
     - row:
+        height: 70px
         col:
             - 
                 element:
                     type: widget
                     id: alarmieren
-                    colspan: 2
                     class:
                         - btn-danger
                         - btn-lg
@@ -113,7 +137,6 @@ rows:
                 element:
                     type: widget
                     id: signalfahrt
-                    colspan: 2
                     class:
                         - btn-primary
                         - btn-lg
@@ -123,39 +146,34 @@ rows:
                     id: aaobest
                     colspan: 
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
     - row:
         class:
-            - mt-5
-        col:
-            -
-                element:
-                    type: label
-                    text: Telefon
-    - row:
+            - mt-2
+        height: 70px
         col:
             -
                 element:
                     type: widget
                     id: anrufannehmen
-                    colspan: 2
                     class:
                         - btn-success
                         - btn-lg
+                        - btn-block
             - 
                 element:
                     type: widget
                     id: aufkarteanzeigen
-                    colspan: 1
                     class:
-                        - btn-light
+                        - btn-secondary
                         - btn-lg
+                        - btn-block
             - 
                 element:
                     type: widget
                     id: auflegen
-                    colspan: 2
                     class:
                         - btn-danger
                         - btn-lg
+                        - btn-block

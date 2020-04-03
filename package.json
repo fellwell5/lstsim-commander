@@ -4,7 +4,7 @@
     "name": "Matthias Schaffer",
     "url": "https://matthiasschaffer.com"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "LeitstellenSimulator Commander führt über eine Website KeyboardShortcuts auf dem Leitstellenrechner aus. Java Runtime wird benötigt (Download: https://www.java.com/)",
   "main": "index.js",
   "scripts": {

@@ -58,6 +58,9 @@ app.use(function(err, req, res, next) {
   }
 });
 
+let client_reload = true;
+setInterval(function(){client_reload = false;}, 1000);
+
 io.on('connection', function(socket){
     var socketId = socket.id;
     var clientIp = socket.request.connection.remoteAddress;
@@ -82,8 +85,15 @@ io.on('connection', function(socket){
       console.log('widget-called: ' + widgetid);
       if(widgets[widgetid] == undefined) return;
       let shortcut = ((Array.isArray(widgets[widgetid].shortcut)) ? widgets[widgetid].shortcut : [widgets[widgetid].shortcut]);
+      if(process.env.OpenCloseURLbeforeCombination == 'true')
+        ks.sendKeys(['f6', 'f6']);
       ks.sendCombination(shortcut);
     });
+
+    if(client_reload){
+      io.emit('client_reload', true);
+    }
+
 });
 
 http.listen(3000, function(){

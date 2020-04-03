@@ -23,56 +23,60 @@ $(function () {
                 if(!classes.includes("row")) classes.push("row");
 
                 if(row.col.length > 0){
-                    AppCont.append($("<div>", {class: classes.join(" "), id: row_key}));
+                    AppCont.append($("<div>", {
+                        class: classes.join(" "),
+                        id: row_key,
+                        height: ((row.height != undefined) ? row.height : '')
+                    }));
                     for (var col_key of Object.keys(row.col)) {
                         let col = row.col[col_key];
                         col_key = row_key + "-" + col_key;
 
                         let classes = ((Array.isArray(col.class)) ? col.class : []);
-                        if(!classes.includes("col")) (col.colspan != undefined) ? "col-"+col.colspan : "col";
+                        console.log(col, (col.colspan != undefined) ? "col-"+col.colspan : "col");
+                        if(!classes.includes("col")) classes.push((col.colspan != undefined) ? "col-"+col.colspan : "col");
 
                         $("#" + row_key).append($("<div>", {class: classes.join(" "), id: col_key}));
                         console.log(col);
-                        if(col.element.type == undefined) continue;
-                        switch (col.element.type) {
-                            case "label":
-                                let classes = ((Array.isArray(col.element.class)) ? col.element.class : []);
-                                $("#" + col_key).html(
-                                    $("<h3>", {class: classes.join(" ")})
-                                    .html(col.element.text)
-                                );
-                              break;
-                            case "widget":
-                                if(widgets[col.element.id] != undefined){
-                                    let widget = widgets[col.element.id];
-                                    console.log(widget);
-                                    switch (widget.type) {
-                                        case "btn":
-                                            let classes = ((Array.isArray(col.element.class)) ? col.element.class : []);
-                                            if(Array.isArray(widget.class)) classes.concat(widget.class);
-                                            if(!classes.includes("btn")) classes.push("btn");
-                                            if(!classes.includes("widget-btn")) classes.push("widget-btn");
+                        if(col.element != undefined){
+                            switch (col.element.type) {
+                                case "label":
+                                    let classes = ((Array.isArray(col.element.class)) ? col.element.class : []);
+                                    $("#" + col_key).html(
+                                        $("<h3>", {class: classes.join(" ")})
+                                        .html(col.element.text)
+                                    );
+                                break;
+                                case "widget":
+                                    if(widgets[col.element.id] != undefined){
+                                        let widget = widgets[col.element.id];
+                                        console.log(widget);
+                                        switch (widget.type) {
+                                            case "btn":
+                                                let classes = ((Array.isArray(col.element.class)) ? col.element.class : []);
+                                                if(Array.isArray(widget.class)) classes.concat(widget.class);
+                                                if(!classes.includes("btn")) classes.push("btn");
+                                                if(!classes.includes("widget-btn")) classes.push("widget-btn");
 
-                                            $("#" + col_key).html(
-                                                $("<button>", {
-                                                    type: "button",
-                                                    class: classes.join(" "),
-                                                    title: widget.description,
-                                                    "data-type": "widget",
-                                                    "data-widgetid": col.element.id
-                                                })
-                                                .html(widget.name)
-                                            );
-                                        default:
-                                            continue;
+                                                $("#" + col_key).html(
+                                                    $("<button>", {
+                                                        type: "button",
+                                                        class: classes.join(" "),
+                                                        title: widget.description,
+                                                        "data-type": "widget",
+                                                        "data-widgetid": col.element.id
+                                                    })
+                                                    .html(widget.name)
+                                                );
+                                            default:
+                                        }
+                                    }else{
                                     }
-                                }else{
-                                    continue;
-                                }
-                              break;
-                            default:
-                              continue;
-                          }
+                                break;
+                                default:
+                                continue;
+                            }
+                        }
                     }
                 }
             }
@@ -80,6 +84,7 @@ $(function () {
     }, "json" );
 
     $(AppCont).on("click", "button.widget-btn", function(){
+        $(this).blur();
         let widgetid = $(this).data("widgetid");
         if(widgetid == undefined) return;
         if(widgets[widgetid] === undefined) return;
@@ -103,6 +108,38 @@ $(function () {
             $(modal).modal('hide');
             $("#footer-connected-users").trigger("click");
         }
+    });
+
+    socket.on('client_reload', function(connected_users){
+        $.loadingBlockShow({
+            imgPath: '/img/loading.gif',
+            text: '<strong>Verbindung zum Server wird neu aufgebaut!</strong><br>warten...'
+        });
+        setInterval(function(){
+            location.reload();
+        }, 1500);
+    });
+
+    socket.on('connect', () => {
+        $.loadingBlockHide();
+    });
+    //preload disconnected-animation
+    $('<img/>')[0].src = '/img/disconnected-animation.gif';
+    socket.on('disconnect', () => {
+        $.loadingBlockShow({
+            imgPath: '/img/disconnected-animation.gif',
+            text: '<strong>Verbindung zum Server getrennt!</strong><br>wiederverbinden...',
+            style: {
+                color: '#eee',
+                position: 'fixed',
+                width: '100%',
+                height: '100%',
+                background: 'rgba(0, 0, 0, .8)',
+                left: 0,
+                top: 0,
+                zIndex: 10000
+            }
+        });
     });
     
     $("#footerText").on("click", "#footer-connected-users", function(){

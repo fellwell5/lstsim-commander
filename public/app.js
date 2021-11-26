@@ -70,13 +70,18 @@ $(function () {
                 if(!classes.includes("row")) classes.push("row");
 
                 if(row.col.length > 0){
-                    AppCont.append($("<div>", {class: classes.join(" "), id: row_key}));
+                    AppCont.append($("<div>", {
+                        class: classes.join(" "),
+                        id: row_key,
+                        height: ((row.height != undefined) ? row.height : '')
+                    }));
                     for (var col_key of Object.keys(row.col)) {
                         let col = row.col[col_key];
                         col_key = row_key + "-" + col_key;
 
                         let classes = ((Array.isArray(col.class)) ? col.class : []);
-                        if(!classes.includes("col")) (col.colspan != undefined) ? "col-"+col.colspan : "col";
+                        console.log(col, (col.colspan != undefined) ? "col-"+col.colspan : "col");
+                        if(!classes.includes("col")) classes.push((col.colspan != undefined) ? "col-"+col.colspan : "col");
 
                         $("#" + row_key).append($("<div>", {class: classes.join(" "), id: col_key}));
                         if(col.element.type == undefined) continue;
@@ -98,26 +103,24 @@ $(function () {
                                             if(!classes.includes("btn")) classes.push("btn");
                                             if(!classes.includes("widget-btn")) classes.push("widget-btn");
 
-                                            $("#" + col_key).html(
-                                                $("<button>", {
-                                                    type: "button",
-                                                    class: classes.join(" "),
-                                                    title: widget.description,
-                                                    "data-type": "widget",
-                                                    "data-widgetid": col.element.id
-                                                })
-                                                .html(widget.name)
-                                            );
+                                                $("#" + col_key).html(
+                                                    $("<button>", {
+                                                        type: "button",
+                                                        class: classes.join(" "),
+                                                        title: widget.description,
+                                                        "data-type": "widget",
+                                                        "data-widgetid": col.element.id
+                                                    })
+                                                    .html(widget.name)
+                                                );
                                         default:
-                                            continue;
                                     }
-                                }else{
-                                    continue;
                                 }
-                              break;
+                                break;
+                            
                             default:
-                              continue;
-                          }
+                                continue;
+                        }
                     }
                 }
             }
@@ -125,6 +128,7 @@ $(function () {
     }, "json" );
 
     $(AppCont).on("click", "button.widget-btn", function(){
+        $(this).blur();
         let widgetid = $(this).data("widgetid");
         if(widgetid == undefined) return;
         if(widgets[widgetid] === undefined) return;
@@ -169,6 +173,24 @@ $(function () {
             $(modal).modal('hide');
             $("#footer-connected-clients").trigger("click");
         }
+    });
+
+    socket.on('client_reload', function(connected_users){
+        $.loadingBlockShow({
+            imgPath: '/img/loading.gif',
+            text: '<strong>Verbindung zum Server wird neu aufgebaut!</strong><br>warten...'
+        });
+        setInterval(function(){
+            location.reload();
+        }, 1500);
+    });
+
+    socket.on('connect', () => {
+        $("#pause_layer").remove();
+    });
+    
+    socket.on('disconnect', () => {
+        $("body").append('<div id="pause_layer"><div class="background"></div><h1>Verbindung zum Server getrennt</h1><h3>Kontrolliere die Verbindung</h3></div>');
     });
     
     $("#footerText").on("click", "#footer-connected-clients", function(){

@@ -13,6 +13,36 @@ ktw-melder:
     shortcut:
         - shift
         - a
+statuskorrektur:
+    type: btn
+    name: Statuskorrektur
+    description: FMS-Status c; Fahrzeug Statuskorrektur
+    category: Fahrzeuge
+    shortcut: c
+einsatzabbruch:
+    type: btn
+    name: Einsatzabbruch
+    description: FMS-Status E; Einsatzabbruch
+    category: Fahrzeuge
+    shortcut: e
+zurwache:
+    type: btn
+    name: Zur Wache
+    description: FMS-Status H; Schickt Fahrzeug zur Wache
+    category: Fahrzeuge
+    shortcut: h
+fahrzeugorten:
+    type: btn
+    name: Fahrzeug orten
+    description: Ortet Fahrzeug/fragt Standort ab
+    category: Fahrzeuge
+    shortcut: u
+weiterekraefte:
+    type: btn
+    name: Weitere Kräfte
+    description: Information über weitere Kräfte
+    category: Fahrzeuge
+    shortcut: i
 
 # Telefon-Log
 anrufannehmen:
@@ -145,6 +175,31 @@ neuereinsatz:
     name: Neuer Einsatz
     description: Neuer Einsatz
     shortcut: "n"
+standorthalten:
+    type: btn
+    name: Standort beibehalten
+    description: Standort beibehalten
+    shortcut: b
+tankenzulassen:
+    type: btn
+    name: Tanken Zulassen
+    description: Tanken Zulassen
+    shortcut: z
+tankennichtmoeglich:
+    type: btn
+    name: Tanken Nicht möglich
+    description: Tanken Nicht möglich
+    shortcut: "n"
+jaja:
+    type: btn
+    name: Ja ja
+    description: Ja ja
+    shortcut: j
+nein:
+    type: btn
+    name: Nein
+    description: Nein
+    shortcut: "n"
 wiederholen:
     type: btn
     name: Wiederholen
@@ -162,8 +217,74 @@ spielzeit32:
     name: 32x
     description: Setzt die Spielgeschwindigkeit auf 32x (höchste Stufe)
     shortcut: x
+spielzeitplus:
+    type: btn
+    name: "+1"
+    description: Erhöht die Spielgeschwindigkeit um eine Stufe
+    shortcut:
+        - shift
+        - "y"
+spielzeitminus:
+    type: btn
+    name: "-1"
+    description: Verringert die Spielgeschwindigkeit um eine Stufe
+    shortcut:
+        - shift
+        - "x"
 pause:
     type: btn
     name: Pause
     description: Spiel pausieren
     shortcut: p
+
+# Zahlentastatur
+zahl1:
+    type: btn
+    name: 1
+    description: Zahl 1
+    shortcut: 1
+zahl2:
+    type: btn
+    name: 2
+    description: Zahl 2
+    shortcut: 2
+zahl3:
+    type: btn
+    name: 3
+    description: Zahl 3
+    shortcut: 3
+zahl4:
+    type: btn
+    name: 4
+    description: Zahl 4
+    shortcut: 4
+zahl5:
+    type: btn
+    name: 5
+    description: Zahl 5
+    shortcut: 5
+zahl6:
+    type: btn
+    name: 6
+    description: Zahl 6
+    shortcut: 6
+zahl7:
+    type: btn
+    name: 7
+    description: Zahl 7
+    shortcut: 7
+zahl8:
+    type: btn
+    name: 8
+    description: Zahl 8
+    shortcut: 8
+zahl9:
+    type: btn
+    name: 9
+    description: Zahl 9
+    shortcut: 9
+zahl0:
+    type: btn
+    name: 0
+    description: Zahl 0
+    shortcut: 0

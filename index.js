@@ -162,6 +162,8 @@ io.on("connection", (socket) => {
     console.log('widget-called: ' + widgetid);
     if(widgets[widgetid] == undefined) return;
     let shortcut = ((Array.isArray(widgets[widgetid].shortcut)) ? widgets[widgetid].shortcut : [widgets[widgetid].shortcut]);
+    if(process.env.OpenCloseURLbeforeCombination == 'true')
+      ks.sendKeys(['f6', 'f6']);
     ks.sendCombination(shortcut);
   });
   

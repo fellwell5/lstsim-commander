@@ -80,7 +80,6 @@ $(function () {
                         col_key = row_key + "-" + col_key;
 
                         let classes = ((Array.isArray(col.class)) ? col.class : []);
-                        console.log(col, (col.colspan != undefined) ? "col-"+col.colspan : "col");
                         if(!classes.includes("col")) classes.push((col.colspan != undefined) ? "col-"+col.colspan : "col");
 
                         $("#" + row_key).append($("<div>", {class: classes.join(" "), id: col_key}));

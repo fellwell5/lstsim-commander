@@ -137,7 +137,7 @@ verstandeneinsatzfenster:
         - v
 verstandenwache:
     type: btn
-    name: Verstanden zur Wache
+    name: Verstanden Wache
     description: Verstanden zur Wache
     shortcut: w
 neuereinsatz:

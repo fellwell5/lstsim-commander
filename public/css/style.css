@@ -1,0 +1,64 @@
+#pause_layer {
+    cursor: default;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+}
+#pause_layer .background {
+    background: black;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#pause_layer h1 {
+    color: white;
+    margin-top: 5em;
+    position: relative;
+    text-align: center;
+}
+#pause_layer h3 {
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.glowing {
+    -webkit-animation: glowing 1000ms infinite;
+    -moz-animation: glowing 1000ms infinite;
+    -o-animation: glowing 1000ms infinite;
+    animation: glowing 1000ms infinite;
+}
+@-webkit-keyframes glowing {
+    0% { -webkit-box-shadow: 0 0 3px #B20000; }
+    50% { -webkit-box-shadow: 0 0 20px #FF0000; }
+    100% { -webkit-box-shadow: 0 0 3px #B20000; }
+}
+
+@-moz-keyframes glowing {
+    0% { -moz-box-shadow: 0 0 3px #B20000; }
+    50% { -moz-box-shadow: 0 0 20px #FF0000; }
+    100% { -moz-box-shadow: 0 0 3px #B20000; }
+}
+
+@-o-keyframes glowing {
+    0% { box-shadow: 0 0 3px #B20000; }
+    50% { box-shadow: 0 0 20px #FF0000; }
+    100% { box-shadow: 0 0 3px #B20000; }
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 3px #B20000; }
+    50% { box-shadow: 0 0 20px #FF0000; }
+    100% { box-shadow: 0 0 3px #B20000; }
+}

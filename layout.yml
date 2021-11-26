@@ -36,6 +36,14 @@ rows:
             - 
                 element:
                     type: widget
+                    id: verstandenwache
+                    colspan: 
+                    class:
+                        - btn-light
+                        - btn-lg
+            - 
+                element:
+                    type: widget
                     id: verstandeneinsatzfenster
                     colspan: 
                     class:

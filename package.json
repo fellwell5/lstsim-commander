@@ -20,6 +20,16 @@
     "express": "^4.17.1",
     "js-yaml": "^3.13.1",
     "node-key-sender": "^1.0.11",
+    "pushover-notifications": "^1.2.2",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "electron": "^16.0.2",
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/app.js"
+    ]
   }
 }

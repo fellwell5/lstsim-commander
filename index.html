@@ -6,6 +6,7 @@
     
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
     <style>
         main > .container {
             padding: 60px 15px 0;
@@ -28,7 +29,9 @@
         <a class="navbar-brand" href="">LstSim Commander</a>
         <ul class="navbar-nav mr-auto"></ul>
         <span class="navbar-text">
-          <i class="fas fa-compress fa-lg" id="fullscreenToggle"></i>
+          <i class="fa-lg mr-4 cursor-pointer" id="notificationToggle"></i>
+          <!--<i class="fas fa-lg mr-4 cursor-pointer" id="notificationClientToggle"></i>-->
+          <i class="fas fa-compress fa-lg cursor-pointer" id="fullscreenToggle"></i>
         </span>
       </nav>
     </header>
@@ -58,16 +61,17 @@
     </footer>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
     <script src="/js/moment.min.js"></script>
     <script src="/js/js.cookie.min.js"></script>
     <script src="/js/ModalAlerts.js"></script>
 
-    <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/screenfull.min.js"></script>
-
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/howler.min.js"></script>
 
     <script src="/app.js"></script>
   </body>

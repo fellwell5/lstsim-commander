@@ -189,6 +189,7 @@ $(function () {
     });
     
     socket.on('disconnect', () => {
+        screenfull.exit();
         $("body").append('<div id="pause_layer"><div class="background"></div><h1>Verbindung zum Server getrennt</h1><h3>Kontrolliere die Verbindung</h3></div>');
     });
     

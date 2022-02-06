@@ -239,7 +239,7 @@ http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 
-const SEND_NOTIFCIATION_AFTER_SECONDS = (process.env.SEND_NOTIFCIATION_AFTER_SECONDS) ? SEND_NOTIFCIATION_AFTER_SECONDS : 15;
+const SEND_NOTIFCIATION_AFTER_SECONDS = (process.env.SEND_NOTIFCIATION_AFTER_SECONDS) ? process.env.SEND_NOTIFCIATION_AFTER_SECONDS : 15;
 setInterval(function(){
 
 

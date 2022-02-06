@@ -3,7 +3,7 @@
 
 lstsim-commander ist eine Erweiterung für das Spiel lstsim.de um eine realistische Steuerung der der Leitstelle zu simulieren.
 
-Gedacht ist die Erweiterung um mit einem Gerät mit Touchscreen die Buttons wie Anruf annehmen, Alarmiern, etc. auszulösen.
+Gedacht ist die Erweiterung um mit einem Gerät mit Touchscreen die Buttons wie Anruf annehmen, Alarmieren, etc. auszulösen.
 ![Screenshot der lstsim-commander Oberfläche (Version 0.0.1)](https://i.imgur.com/p3OfZE3.png)
 
 ## Installation

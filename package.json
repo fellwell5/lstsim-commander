@@ -4,27 +4,54 @@
     "name": "Matthias Schaffer",
     "url": "https://matthiasschaffer.com"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "LeitstellenSimulator Commander führt über eine Website KeyboardShortcuts auf dem Leitstellenrechner aus. Java Runtime wird benötigt (Download: https://www.java.com/)",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "electron .",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.matthiasschaffer.com/fellwell5/wasscrapper.git"
+    "url": "https://github.com/fellwell5/lstsim-commander"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.matthiasschaffer.lstsim-commander",
+    "productName": "lstsim-commander",
+    "directories": {
+      "output": "build/electron-release"
+    },
+    "extraFiles": [
+      "icon.png"
+    ],
+    "extraResources": ["./public/**"],
+    "win": {
+      "target": "portable",
+      "verifyUpdateCodeSignature": false,
+      "icon": "icon.png"
+    },
+    "mac": {
+      "icon": "./icon.png",
+      "category": "public.app-category.utilities"
+    }
   },
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "js-yaml": "^3.13.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.2",
+    "ip": "^1.1.5",
+    "js-yaml": "^3.14.1",
     "node-key-sender": "^1.0.11",
     "pushover-notifications": "^1.2.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.1",
+    "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
-    "electron": "^16.0.2",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "electron": "^16.0.8",
+    "electron-builder": "^22.14.13",
     "nodemon": "^2.0.15"
   },
   "nodemonConfig": {

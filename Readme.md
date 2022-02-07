@@ -7,26 +7,43 @@ Gedacht ist die Erweiterung um mit einem Gerät mit Touchscreen die Buttons wie 
 ![Screenshot der lstsim-commander Oberfläche (Version 0.0.1)](https://i.imgur.com/p3OfZE3.png)
 
 ## Installation
-Um lstsim-commander zu installieren ist Java und Node.js erforderlich.
-lstsim-commander wird auf dem Hostrechner installiert, also auf dem Computer auf dem lstsim.de gespielt wird.
+Um lstsim-commander zu installieren ist Java erforderlich.
+lstsim-commander wird auf dem Hostrechner ausgeführt, also auf dem Computer auf dem lstsim.de gespielt wird.
 
 Die Tasten der Weboberfläche lösen ein virtuelles Keyboard-Event am Hostrechner aus, sprich wie wenn die Tastatur auf den Buchstaben drückt.
 Daher muss der Fokus auch auf der Website von lstsim liegen und die Weboberfläche vom commander auf einem anderen Gerät geöffnet sein.
 
- 1. Java auf dem Computer installieren (wird benötigt für die Auslösung der Tastaturkürzel)
- 2. Node.js auf dem Hostrechner [herunterladen](https://nodejs.org/en/download/) und installieren
- 3. Dieses Repository herunterladen
- 4. Kommandozeile im heruntergeladenenen Ordner öffnen
- 5. Den Befehl "npm install" und danach "npm start" durchführen
- 6. Einen Webbrowser auf dem Hostrechner öffnen, die Seite https://localhost:3000/install öffnen und der Anleitung zur Installation des Browserplugins folgen
- Das Browserplugin ist erforderlich um eine Verbindung zwischen lstsim.de und lstsim-commander herzustellen. Dadurch werden Anrufe im Commander visualisiert.
- 
- 7. Auf dem Commander-Gerät (Gerät welches mit Touchbildschirm als Leitstellenmonitor eingesetzt wird) den Webbrowser mit http://[IP_des_Hostrechners]:3000 ([Wie finde ich meine lokale IP-Adresse?](https://www.ionos.at/digitalguide/hosting/hosting-technik/ip-adresse-finden/#:~:text=Geben%20Sie%20den%20Befehl%20%E2%80%9Ecmd,Ihrer%20eigenen%20lokalen%20IP-Adresse.)) öffnen
- 8. Die im Screenshot ersichtliche Weboberfläche sollte nun ersichtlich sein.
+1. Java auf dem Computer [herunterladen](https://www.java.com/) und installieren (wird benötigt für die Auslösung der Tastaturkürzel)
+2. Neueste lstsim-commander Version von github [herunterladen](https://github.com/fellwell5/lstsim-commander/releases)
+3. Die Datei lstsim-commander (version).exe ausführen
+4. Beim ersten ausfürhen auf den Button "Browsererweiterung installieren" klicken
+Das Browserplugin ist erforderlich um eine Verbindung zwischen lstsim.de und lstsim-commander herzustellen. Dadurch werden Anrufe im Commander visualisiert.
+5. Auf dem Commander-Gerät (Gerät welches mit Touchbildschirm als Leitstellenmonitor eingesetzt wird) den Webbrowser mit http://[IP_des_Hostrechners]:3000 öffnen
+Die Webadresse wird am Hostrechner angezeigt
+6. Die im Screenshot ersichtliche Weboberfläche sollte nun ersichtlich sein.
 
 In der Commanderansicht ist ein Telefonhörer ersichtlich, ist dieser durchgestrichen ist keine Verbindung zum lstsim.de vorhanden, der Commander kann mit den Befehlen trotzdem verwendet werden, es ist aber kein Visualisierung der Anrufe möglich.
 
-## Benachrichtigunen
+## Installation mittels Source
+
+Für erfahrene Anwender welche den Quellcode lieber direkt ausführen wollen oder weiterentwickeln, kann lstsim-commander auch über npm gestartet werden:
+
+1. Java auf dem Computer [herunterladen](https://www.java.com/) und installieren (wird benötigt für die Auslösung der Tastaturkürzel)
+2. Node.js auf dem Hostrechner [herunterladen](https://nodejs.org/en/download/) und installieren
+3. Dieses Repository herunterladen
+4. Kommandozeile im heruntergeladenenen Ordner öffnen
+5. Den Befehl "npm install" und danach "npm start" durchführen
+6. Beim ersten ausfürhen auf den Button "Browsererweiterung installieren" klicken
+Das Browserplugin ist erforderlich um eine Verbindung zwischen lstsim.de und lstsim-commander herzustellen. Dadurch werden Anrufe im Commander visualisiert.
+
+7. Auf dem Commander-Gerät (Gerät welches mit Touchbildschirm als Leitstellenmonitor eingesetzt wird) den Webbrowser mit http://[IP_des_Hostrechners]:3000 öffnen
+Die Webadresse wird am Hostrechner angezeigt
+8. Die im Screenshot ersichtliche Weboberfläche sollte nun ersichtlich sein.
+
+
+## Benachrichtigungen
+
+### In der gepacketen Release-Version ist zurzeit noch keine Konfiguration der Benachrichtigungen möglich
 
 lstsim-commander kann eine Benachrichtigung versenden, wenn ein Anruf länger als eine definierte Zeit wartet.
 

@@ -1,0 +1,33 @@
+stages:
+  - test
+  - build
+  - deploy
+
+.test-app:
+  stage: test
+  image: node:lts-alpine
+  script:
+    - npm install
+
+electron-release-build:
+  only:
+    - master
+  stage: build
+  image: electronuserland/builder:wine
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - electron-release/*.exe*
+      - electron-release/*.yml
+    expire_in: 1 month
+
+pages:
+  only:
+    - master
+  stage: deploy
+  image: electronuserland/builder:wine
+  script:
+    - npm install
+    - npm run deploy

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>lstsim-commander</title>
+    
+    <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-5">
+        <a class="navbar-brand" href="">LstSim Commander</a>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-0 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <a href="http://localhost:3000" class="btn btn-primary mt-3" id="openweb">Commander öffnen</a>
+            <p>Die Weboberfläche ist unter <span id="weburl">...</span> erreichbar.</p>
+          </div>
+          <div class="col-12">
+            <a href="http://localhost:3000/install" class="btn btn-primary mt-3" id="openinstall">Browsererweiterung installieren</a>
+            <p>Wird benötigt um Anrufe und Uhrzeit von lstsim abzufragen.</p>
+          </div>
+          <div class="col-12">
+            <p id="version"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>

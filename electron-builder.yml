@@ -1,0 +1,3 @@
+appId: com.matthiasschaffer.lstsim-commander
+publish:
+  provider: github

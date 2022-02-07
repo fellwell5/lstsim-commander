@@ -29,7 +29,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "public/app.js"
+      "public/app.js",
+      "public/lstsim-commander.user.js"
     ]
   }
 }

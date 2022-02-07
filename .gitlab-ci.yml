@@ -9,7 +9,7 @@ stages:
   script:
     - npm install
 
-electron-release-build:
+.electron-release-build:
   only:
     - master
   stage: build
@@ -19,11 +19,11 @@ electron-release-build:
     - npm run build
   artifacts:
     paths:
-      - electron-release/*.exe*
-      - electron-release/*.yml
+      - build/electron-release/*.exe*
+      - build/electron-release/*.yml
     expire_in: 1 month
 
-pages:
+electron-release-deploy:
   only:
     - master
   stage: deploy
@@ -31,3 +31,4 @@ pages:
   script:
     - npm install
     - npm run deploy
+  when: manual

@@ -18,6 +18,7 @@ const fs = require('fs');
 
 let notifications_enabled = true;
 let game_paused = null;
+let clock = null;
 let lstsim_socket = null;
 let lstsim_user = null;
 let connected_clients = {};
@@ -79,6 +80,7 @@ app.get('/stats', function(req, res){
     "game_paused": game_paused,
     "lstsim_socket": lstsim_socket,
     "lstsim_user": lstsim_user,
+    "clock": clock,
     "calls": calls["count_calls"],
     "total_calls": total_calls,
     "version": pjson.version
@@ -220,6 +222,11 @@ io.on("connection", (socket) => {
     notifications_enabled = !notifications_enabled;
 
     io.emit('notifications', notifications_enabled);
+  });
+  
+  socket.on('clock', function(data){
+    clock = data;
+    io.emit('clock', data);
   });
   
   socket.on('send-notification', function(data){

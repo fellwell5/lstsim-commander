@@ -1,17 +1,4 @@
 $(function () {
-    var funkspruch = new Howl({
-        src: ['/sounds/funkspruch.ogg'],
-        html5: true
-    });
-    var sprechwunsch = new Howl({
-        src: ['/sounds/sprechwunsch.ogg'],
-        html5: true
-    });
-    var telefon = new Howl({
-        src: ['/sounds/telefon.ogg'],
-        html5: true
-    });
-
     let socket = io({
         query: {
             application: "commander"
@@ -42,13 +29,10 @@ $(function () {
         if (NotificationsEnabled == "true") {
             switch (data.call_type) {
                 case "T":
-                    telefon.play();
                     break;
                 case "J":
-                    sprechwunsch.play();
                     break;
                 case "K":
-                    funkspruch.play();
                     break;
             }
         }
@@ -150,8 +134,10 @@ $(function () {
         if (lstsim_connected) {
             let count_calls = data.calls.T + data.calls.J + data.calls.K;
             $("#footerText").append( "<span title=\"Anrufe\" class=\"float-right cursor-pointer\" id=\"footer-phone-calls\"><i class=\"fas fa-phone\"></i> "+(count_calls)+"</span>");
+            $("#footerText").append( "<span class=\"float-right cursor-pointer mr-2\" id=\"footer-clock\"><i class=\"fas fa-clock\"></i> "+data.clock+"</span>");
         } else {
             $("#footerText").append( "<span title=\"Nicht verbunden\" class=\"float-right cursor-pointer\" id=\"footer-phone-calls\"><i class=\"fas fa-phone-slash\"></i></span>");
+            $("#footerText").append( "<span class=\"float-right cursor-pointer mr-2\" id=\"footer-clock\"><i class=\"fas fa-clock\"></i></span>");
         }
 
         if (data.notifications_enabled) {
@@ -228,6 +214,7 @@ $(function () {
     socket.on('lstsim-disconnected', function(data){
         lstsim_connected = false;
         $("#footer-phone-calls").html("<i class=\"fas fa-phone-slash\"></i> ");
+        $("#footer-clock").html("<i class=\"fas fa-clock\"></i> ");
     });
 
     socket.on('waiting-calls', function(data){
@@ -235,6 +222,12 @@ $(function () {
         count_calls = data.T + data.J + data.K;
         if (lstsim_connected) {
             $("#footer-phone-calls").html("<i class=\"fas fa-phone\"></i> " + count_calls);
+        }
+    });
+
+    socket.on('clock', function(data){
+        if (lstsim_connected) {
+            $("#footer-clock").html("<i class=\"fas fa-clock\"></i> " + data);
         }
     });
 

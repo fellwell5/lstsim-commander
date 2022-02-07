@@ -1,24 +1,28 @@
 
 # lstsim-commander
 
-lstsim-commander ist eine Erweiterung für das Spiel lstsim.de um eine realistische Steuerung der der Leitstelle zu simulieren.
+lstsim-commander ist eine Erweiterung für das Spiel lstsim.de um eine realistische Steuerung der Leitstelle zu simulieren.
 
 Gedacht ist die Erweiterung um mit einem Gerät mit Touchscreen die Buttons wie Anruf annehmen, Alarmieren, etc. auszulösen.
 ![Screenshot der lstsim-commander Oberfläche (Version 0.0.1)](https://i.imgur.com/p3OfZE3.png)
 
 ## Installation
-Um lstsim-commander zu installieren ist Node.js erforderlich.
+Um lstsim-commander zu installieren ist Java und Node.js erforderlich.
 lstsim-commander wird auf dem Hostrechner installiert, also auf dem Computer auf dem lstsim.de gespielt wird.
 
- 1. Node.js auf dem Hostrechner [herunterladen](https://nodejs.org/en/download/) und installieren
- 2. Dieses Repository herunterladen
- 3. Kommandozeile im heruntergeladenenen Ordner öffnen
- 4. Den Befehl "npm install" und danach "npm start" durchführen
- 5. Einen Webbrowser auf dem Hostrechner öffnen, die Seite https://localhost:3000/install öffnen und der Anleitung zur Installation des Browserplugins folgen
+Die Tasten der Weboberfläche lösen ein virtuelles Keyboard-Event am Hostrechner aus, sprich wie wenn die Tastatur auf den Buchstaben drückt.
+Daher muss der Fokus auch auf der Website von lstsim liegen und die Weboberfläche vom commander auf einem anderen Gerät geöffnet sein.
+
+ 1. Java auf dem Computer installieren (wird benötigt für die Auslösung der Tastaturkürzel)
+ 2. Node.js auf dem Hostrechner [herunterladen](https://nodejs.org/en/download/) und installieren
+ 3. Dieses Repository herunterladen
+ 4. Kommandozeile im heruntergeladenenen Ordner öffnen
+ 5. Den Befehl "npm install" und danach "npm start" durchführen
+ 6. Einen Webbrowser auf dem Hostrechner öffnen, die Seite https://localhost:3000/install öffnen und der Anleitung zur Installation des Browserplugins folgen
  Das Browserplugin ist erforderlich um eine Verbindung zwischen lstsim.de und lstsim-commander herzustellen. Dadurch werden Anrufe im Commander visualisiert.
  
- 6. Auf dem Commander-Gerät (Gerät welches mit Touchbildschirm als Leitstellenmonitor eingesetzt wird) den Webbrowser mit http://[IP_des_Hostrechners]:3000 ([Wie finde ich meine lokale IP-Adresse?](https://www.ionos.at/digitalguide/hosting/hosting-technik/ip-adresse-finden/#:~:text=Geben%20Sie%20den%20Befehl%20%E2%80%9Ecmd,Ihrer%20eigenen%20lokalen%20IP-Adresse.)) öffnen
- 7. Die im Screenshot ersichtliche Weboberfläche sollte nun ersichtlich sein.
+ 7. Auf dem Commander-Gerät (Gerät welches mit Touchbildschirm als Leitstellenmonitor eingesetzt wird) den Webbrowser mit http://[IP_des_Hostrechners]:3000 ([Wie finde ich meine lokale IP-Adresse?](https://www.ionos.at/digitalguide/hosting/hosting-technik/ip-adresse-finden/#:~:text=Geben%20Sie%20den%20Befehl%20%E2%80%9Ecmd,Ihrer%20eigenen%20lokalen%20IP-Adresse.)) öffnen
+ 8. Die im Screenshot ersichtliche Weboberfläche sollte nun ersichtlich sein.
 
 In der Commanderansicht ist ein Telefonhörer ersichtlich, ist dieser durchgestrichen ist keine Verbindung zum lstsim.de vorhanden, der Commander kann mit den Befehlen trotzdem verwendet werden, es ist aber kein Visualisierung der Anrufe möglich.
 

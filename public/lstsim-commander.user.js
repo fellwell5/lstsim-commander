@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Lstsim Commander
 // @namespace    https://github.com/fellwell5/lstsim-commander
-// @version      0.1
+// @version      0.2
 // @description  Leitstellenexperience für deinen lstsim
 // @author       Matthias Schaffer
 // @match        https://lstsim.de/
@@ -27,9 +27,15 @@
             });
 
             let paused = undefined;
+            let clock = undefined;
 
             console.log("Welcome @ the Push-Plugin, "+username+"!");
             setInterval(function(){
+                let now = $("#clock").html();
+                if (now != clock) {
+                    clock = now;
+                    socket.emit('clock', now);
+                }
                 if ($("#pause_layer").length) {
                     if (paused !== true) {
                         paused = true;

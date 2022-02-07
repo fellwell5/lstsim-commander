@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Lstsim Commander
 // @namespace    https://github.com/fellwell5/lstsim-commander
-// @version      0.2
+// @version      0.0.3
 // @description  Leitstellenexperience für deinen lstsim
 // @author       Matthias Schaffer
 // @match        https://lstsim.de/

@@ -4,14 +4,17 @@
 lstsim-commander ist eine Erweiterung für das Spiel lstsim.de um eine realistische Steuerung der Leitstelle zu simulieren.
 
 Gedacht ist die Erweiterung um mit einem Gerät mit Touchscreen die Buttons wie Anruf annehmen, Alarmieren, etc. auszulösen.
-![Screenshot der lstsim-commander Oberfläche (Version 0.0.1)](https://i.imgur.com/p3OfZE3.png)
 
-## Installation
+
 Um lstsim-commander zu installieren ist Java erforderlich.
 lstsim-commander wird auf dem Hostrechner ausgeführt, also auf dem Computer auf dem lstsim.de gespielt wird.
 
 Die Tasten der Weboberfläche lösen ein virtuelles Keyboard-Event am Hostrechner aus, sprich wie wenn die Tastatur auf den Buchstaben drückt.
 Daher muss der Fokus auch auf der Website von lstsim liegen und die Weboberfläche vom commander auf einem anderen Gerät geöffnet sein.
+
+![Screenshot der lstsim-commander Oberfläche (Version 0.0.1)](https://i.imgur.com/p3OfZE3.png)
+
+## Installation
 
 1. Java auf dem Computer [herunterladen](https://www.java.com/) und installieren (wird benötigt für die Auslösung der Tastaturkürzel)
 2. Neueste lstsim-commander Version von github [herunterladen](https://github.com/fellwell5/lstsim-commander/releases)
